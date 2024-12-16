@@ -1,0 +1,56 @@
+﻿<Window x:Class="Practical13.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practical13"
+        mc:Ignorable="d"
+        Title="Практика №13" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="Файл">
+                <MenuItem Header="Открыть" Click="OpenFile_Click"/>
+                <MenuItem Header="Сохранить" Click="SaveFile_Click"/>
+                <MenuItem Header="Выход" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Помощь" Click="About_Click"/>
+        </Menu>
+
+        <StatusBar Grid.Row="2" Name="statusBar" Margin="0,40,0,0">
+            <TextBlock Name="statusText" Text="Size: 0 x 0, Cell: N/A"/>
+        </StatusBar>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <GroupBox Header="Исходные данные" Width="300" Margin="5">
+                <StackPanel>
+                    <TextBox Name="InputMatrix" AcceptsReturn="True" TextWrapping="Wrap" Height="200"/>
+                    <Button Content="Анализ" Click="Analyze_Click" Margin="5"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Результат" Width="300" Margin="5">
+                <TextBlock Name="ResultText" TextWrapping="Wrap" Padding="10"/>
+            </GroupBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button Content="О программе" Click="About_Click" Margin="5" RenderTransformOrigin="0.5,0.5" Height="21">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.615"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.451"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Content="Выход" Click="Exit_Click" Margin="5" Height="20"/>
+        </StackPanel>
+    </Grid>
+</Window>
